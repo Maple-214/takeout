@@ -21,5 +21,5 @@ npm run build --report
 ## webpack
 
 ```text
-yarn add stylus stylus-loader -D  vscode Manta’s Stylus Supremacy
+yarn add stylus@0.54.5 stylus-loader@3.0.2 -D  vscode Manta’s Stylus Supremacy
 ```

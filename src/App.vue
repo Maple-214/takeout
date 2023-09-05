@@ -1,10 +1,17 @@
 <template>
-  <div>app</div>
+  <div id="app-main">
+    <router-view></router-view>
+    <FooterGuide />
+  </div>
 </template>
 
 <script>
+import FooterGuide from "./components/FooterGuide/FooterGuide.vue";
 export default {
   name: "TakeoutApp",
+  components: {
+    FooterGuide
+  },
 
   data() {
     return {};
@@ -16,4 +23,10 @@ export default {
 };
 </script>
 
-<!-- <style lang="stylus" scoped></style> -->
+<style lang="stylus" scoped>
+#app-main
+  width 100%
+  height 100%
+  background-color: #f5f5ff
+  position relative
+</style>

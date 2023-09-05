@@ -34,6 +34,22 @@ bottom-border-1px($color) {
   }
 }
 
+top-border-1px($color) {
+  position: relative;
+  border: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+    height: 1px;
+    background-color: $color;
+  }
+}
+
 // 根据像素比缩放1px像素框
 @media only screen and (-webkit-device-pixel-ratio: 2) {
   .border-1px {
