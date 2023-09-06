@@ -1,15 +1,32 @@
 <template>
-  <div>
-    Order
-  </div>
+  <section class="order">
+    <header class="header">
+      <a href="" class="header-header">
+        <span class="header-title">订单列表</span>
+      </a>
+    </header>
+    <div class="order-container">
+      <div class="bg-img">
+        <div class="bg-box">
+          <img :src="imageUrl" alt="" srcset="" />
+          <span class="bg-text">登录后查看外卖订单</span>
+        </div>
+      </div>
+
+      <div class="bg-btn">立即登录</div>
+    </div>
+  </section>
 </template>
 
 <script>
+import imageUrl from "../../assets/image/bg1.png";
 export default {
   name: "TakeoutOrder",
 
   data() {
-    return {};
+    return {
+      imageUrl
+    };
   },
 
   mounted() {},
@@ -18,4 +35,53 @@ export default {
 };
 </script>
 
-<style lang="" scoped></style>
+<style lang="stylus" scoped>
+.order
+  margin-top: 45px
+  background-color: #fff
+  min-height: calc(100vh - 50px);
+  display: flex
+  .header
+    background-color: #02a774
+    position: fixed
+    z-index 100
+    left: 0
+    top: 0
+    width 100%
+    height 45px
+    display: flex
+    align-items: center
+    justify-content: space-around
+    color: #fff
+    a
+      color: #fff
+    .header-title
+      max-width: 200px
+      font-size: 21px
+  .order-container
+    flex: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-bottom: 50px
+    .bg-img
+      .bg-box
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+      img
+        width 208px
+        height 208px
+    .bg-btn
+      width: 100px;
+      background: #02a774
+      padding: 11px 5px
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 4px
+      color: #fff
+      margin-top: 10px
+</style>

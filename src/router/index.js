@@ -30,5 +30,6 @@ const routes = [
 ];
 
 export default new Router({
+  linkActiveClass: "footer-guide-active-link",
   routes
 });

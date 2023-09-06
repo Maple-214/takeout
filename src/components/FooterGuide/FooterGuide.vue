@@ -1,21 +1,14 @@
 <template>
-  <div id="footer" class="footer-guide">
-    <a href="javascript:;" class="guide-item on">
-      <span class="iconfont icon-waimai-"></span>
-      <span>外卖</span>
-    </a>
-    <a href="javascript:;" class="guide-item">
-      <span class="iconfont icon-icon-"></span>
-      <span>搜索</span>
-    </a>
-    <a href="javascript:;" class="guide-item">
-      <span class="iconfont icon-dingdan"></span>
-      <span>订单</span>
-    </a>
-    <a href="javascript:;" class="guide-item">
-      <span class="iconfont icon-yonghu"></span>
-      <span>用户</span>
-    </a>
+  <div id="footer" class="footer-guide border-1px">
+    <router-link
+      v-for="link in footerLinks"
+      :key="link.path"
+      :to="link.path"
+      class="guide-item"
+    >
+      <span class="iconfont" :class="link.icon"></span>
+      <span class="text">{{ link.title }}</span>
+    </router-link>
   </div>
 </template>
 
@@ -24,7 +17,30 @@ export default {
   name: "TakeoutFooterGuide",
 
   data() {
-    return {};
+    return {
+      footerLinks: [
+        {
+          path: "/msite",
+          title: "外卖",
+          icon: "icon-waimai-"
+        },
+        {
+          path: "/search",
+          title: "搜索",
+          icon: "icon-icon-"
+        },
+        {
+          path: "/order",
+          title: "订单",
+          icon: "icon-dingdan"
+        },
+        {
+          path: "/profile",
+          title: "用户",
+          icon: "icon-yonghu"
+        }
+      ]
+    };
   },
 
   mounted() {},
@@ -48,15 +64,16 @@ export default {
   display: flex
   .guide-item
     display: flex
+    justify-content: center;
     flex: 1
     text-align: center
     flex-direction: column
     align-items: center
     margin: 5px
     color: #999
-    &.on
+    &.footer-guide-active-link
       color: #02a774
-    span
+    .text
       font-size: 12px
       margin-top: 2px
       margin-bottom: 2px

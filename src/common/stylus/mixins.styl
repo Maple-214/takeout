@@ -2,21 +2,21 @@ $green = #02a774;
 $yellow = #f5a100;
 $bc = #e4e4e4;
 
-bottom-border-1px($color) {
-  position: relative;
-  border: none;
+// bottom-border-1px($color) {
+//   position: relative;
+//   border: none;
 
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: $color;
-    transform: scaleY(0.5);
-  }
-}
+//   &:after {
+//     content: '';
+//     position: absolute;
+//     left: 0;
+//     bottom: 0;
+//     width: 100%;
+//     height: 1px;
+//     background-color: $color;
+//     transform: scaleY(0.5);
+//   }
+// }
 
 bottom-border-1px($color) {
   position: relative;
@@ -47,6 +47,21 @@ top-border-1px($color) {
     z-index: 200;
     height: 1px;
     background-color: $color;
+  }
+}
+
+right-border-1px($color) {
+  position: relative;
+  border: none;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 1px;
+    height: 100%;
+    background-color: $color; // 你可以根据需要更改线的颜色
   }
 }
 
