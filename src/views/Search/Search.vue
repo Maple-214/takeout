@@ -1,10 +1,6 @@
 <template>
   <section class="search">
-    <header class="header">
-      <a href="" class="header-header">
-        <span class="header-title">搜索</span>
-      </a>
-    </header>
+    <HeaderTop title="搜索" />
     <form action="#" class="search-form clearfix">
       <input type="search" name="search" placeholder="请输入商家或美食名称" />
       <input type="submit" name="submit" class="search-submit" />
@@ -13,8 +9,13 @@
 </template>
 
 <script>
+import HeaderTop from "@/components/HeaderTop/HeaderTop";
+
 export default {
   name: "TakeoutSearch",
+  components: {
+    HeaderTop
+  },
 
   data() {
     return {};
@@ -29,23 +30,6 @@ export default {
 <style lang="stylus" scoped>
 .search
   width 100%
-  .header
-    background-color: #02a774
-    position: fixed
-    z-index 100
-    left: 0
-    top: 0
-    width 100%
-    height 45px
-    display: flex
-    align-items: center
-    justify-content: space-around
-    color: #fff
-    a
-      color: #fff
-    .header-title
-      max-width: 200px
-      font-size: 21px
   .search-form
     margin-top: 45px
     background-color: #fff

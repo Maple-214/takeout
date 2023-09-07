@@ -1,10 +1,6 @@
 <template>
   <section class="order">
-    <header class="header">
-      <a href="" class="header-header">
-        <span class="header-title">订单列表</span>
-      </a>
-    </header>
+    <HeaderTop title="订单列表" />
     <div class="order-container">
       <div class="bg-img">
         <div class="bg-box">
@@ -12,7 +8,6 @@
           <span class="bg-text">登录后查看外卖订单</span>
         </div>
       </div>
-
       <div class="bg-btn">立即登录</div>
     </div>
   </section>
@@ -20,8 +15,13 @@
 
 <script>
 import imageUrl from "../../assets/image/bg1.png";
+import HeaderTop from "@/components/HeaderTop/HeaderTop";
+
 export default {
   name: "TakeoutOrder",
+  components: {
+    HeaderTop
+  },
 
   data() {
     return {
@@ -41,23 +41,6 @@ export default {
   background-color: #fff
   min-height: calc(100vh - 50px);
   display: flex
-  .header
-    background-color: #02a774
-    position: fixed
-    z-index 100
-    left: 0
-    top: 0
-    width 100%
-    height 45px
-    display: flex
-    align-items: center
-    justify-content: space-around
-    color: #fff
-    a
-      color: #fff
-    .header-title
-      max-width: 200px
-      font-size: 21px
   .order-container
     flex: 1
     display: flex

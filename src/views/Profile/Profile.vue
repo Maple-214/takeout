@@ -1,10 +1,6 @@
 <template>
   <section class="profile">
-    <header class="header">
-      <a href="" class="header-header">
-        <span class="header-title">我的</span>
-      </a>
-    </header>
+    <HeaderTop title="我的" />
     <div class="user-container border-1px">
       <div class="user-img">
         <img :src="userImage" alt="" />
@@ -78,8 +74,12 @@
 
 <script>
 import userImage from "../../assets/image/user.png";
+import HeaderTop from "@/components/HeaderTop/HeaderTop";
 export default {
   name: "TakeoutProfile",
+  components: {
+    HeaderTop
+  },
 
   data() {
     return {
@@ -98,23 +98,6 @@ export default {
 .profile
   margin-top: 45px
   background-color: #fff
-  .header
-    background-color: #02a774
-    position: fixed
-    z-index 100
-    left: 0
-    top: 0
-    width 100%
-    height 45px
-    display: flex
-    align-items: center
-    justify-content: space-around
-    color: #fff
-    a
-      color: #fff
-    .header-title
-      max-width: 200px
-      font-size: 21px
   .user-container
     background-color: #02a774
     display: flex
@@ -169,7 +152,7 @@ export default {
     .user-info-p
       margin-bottom: 10px
       span
-        font-size: 30px
+        font-size: 27px
       .balance
         color: orange
       .discount

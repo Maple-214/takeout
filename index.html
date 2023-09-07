@@ -4,7 +4,9 @@
 <head>
   <title>takeout</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+  <meta name="viewport"
+    content="width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;">
   <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4238462_xspgud209e.css">
   <link rel="stylesheet" href="/static/css/reset.css">
   <!-- ios mobile 300ms -->
@@ -15,6 +17,34 @@
         FastClick.attach(document.body);
       }, false);
     }
+  </script>
+  <!-- 移动端适配 -->
+  <script>
+    //下面是根据设备dpr设置viewport
+    var dpr = window.devicePixelRatio || 1
+    var scale = 1 / dpr
+    // document.querySelector('meta[name=viewport]')?.setAttribute(
+    //   "content",
+    //   "width=device-width" +
+    //   ",initial-scale=" +
+    //   scale +
+    //   ", maximum-scale=" +
+    //   scale +
+    //   ", minimum-scale=" +
+    //   scale +
+    //   ", user-scalable=no"
+    // )
+  </script>
+  <script>
+    // set 1rem = 逻辑像素（设备独立像素） / 23.4375
+    function setFontSize() {
+      var rem = document.documentElement.clientWidth / 23.4375
+      const html = document.querySelector('html')
+      if (html) html.style.fontSize = rem + 'px'
+    }
+    window.onload = () => setFontSize()
+    window.addEventListener('resize', setFontSize)
+
   </script>
 </head>
 
