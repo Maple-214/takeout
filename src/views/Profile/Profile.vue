@@ -1,7 +1,7 @@
 <template>
   <section class="profile">
     <HeaderTop title="我的" />
-    <div class="user-container border-1px">
+    <router-link to="/login" class="user-container border-1px">
       <div class="user-img">
         <img :src="userImage" alt="" />
       </div>
@@ -15,7 +15,7 @@
       <div class="user-right">
         <span class="iconfont icon-arrow-right"></span>
       </div>
-    </div>
+    </router-link>
     <div class="user-info border-1px">
       <div class="user-info-items right-border border-1px">
         <p class="user-info-p"><span class="balance">0.00</span>元</p>
