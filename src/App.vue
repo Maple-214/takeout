@@ -7,6 +7,7 @@
 
 <script>
 import FooterGuide from "./components/FooterGuide/FooterGuide.vue";
+import { RECIVE_ADRESS } from "@/store/mutations-types";
 export default {
   name: "TakeoutApp",
   components: {
@@ -17,7 +18,9 @@ export default {
     return {};
   },
 
-  mounted() {},
+  mounted() {
+    this.$store.commit(RECIVE_ADRESS);
+  },
 
   methods: {}
 };
